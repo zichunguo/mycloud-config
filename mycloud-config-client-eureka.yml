@@ -12,12 +12,12 @@ spring:
     name: mycloud-config-client-eureka
 eureka: 
   instance: 
-    hostname: localhost # eureka服务端的实例名称
+    hostname: eureka7001 # eureka服务端的实例名称
   client: 
     register-with-eureka: false # false表示不向注册中心注册自己
     fetch-registry: false # false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
     service-url: 
-      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001:7001/eureka
 ---
 server: 
   port: 7001  # 注册中心占用的端口，冒号后面必须有空格
