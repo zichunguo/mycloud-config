@@ -1,0 +1,28 @@
+spring: 
+  profiles: 
+    active: 
+    - dev
+
+---
+server: 
+  port: 3355
+spring: 
+  profiles: dev # 开发环境
+  application: 
+    name: mycloud-config-client
+eureka: 
+  client: # 客户端注册进 eureka 服务列表
+    service-url: 
+      defaultZone: http://localhost:7001/eureka
+---
+server: 
+  port: 3366
+spring: 
+  profiles: test # 测试环境
+  application: 
+    name: mycloud-config-client
+eureka: 
+  client: # 客户端注册进 eureka 服务列表
+    service-url: 
+      defaultZone: http://localhost:7001/eureka
+# 请保存为 UTF-8 格式
